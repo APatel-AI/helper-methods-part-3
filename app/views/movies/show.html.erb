@@ -1,38 +1,40 @@
 <div>
-  <div>
-    <h1>
+  <div class="card" style="width: 18rem">
+    <div class= "card-body">
+    <h1 class="card-title">
       Movie #<%= @movie.id %> details
     </h1>
 
     <div>
-      <div>
+      <div class="card-link">
         <%= link_to "Go back", movies_path %>
       </div>
 
-      <div>
+      <div class="card-link">
         <%= link_to "Edit Movie", edit_movie_path(@movie) %>
       </div>
 
-      <div>
+      <div class="card-link">
         <%= link_to "Delete Movie", @movie, data: { turbo_method: :delete } %>
       </div>
     </div>
 
     <dl>
-      <dt>
+      <dt clas="card-text">
         Title
       </dt>
       <dd>
         <%= @movie.title %>
       </dd>
 
-      <dt>
+      <dt class="card-text">
         Description
       </dt>
       <dd>
         <%= @movie.description %>
       </dd>
 
+      <div class="card-subtitle">
       <dt>
         Created at
       </dt>
@@ -46,6 +48,8 @@
       <dd>
         <%= time_ago_in_words(@movie.updated_at) %> ago
       </dd>
+      </div>
     </dl>
+  </div>
   </div>
 </div>
